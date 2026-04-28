@@ -1,0 +1,37 @@
+[project]
+name = "heap"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.1",
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "pytest-html>=4.2.0",
+    "hypothesis>=6.151.12",
+]
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+    "--junitxml=reports/test.xml",
+    "--html=reports/pytest_html/index.html",
+    "--self-contained-html",
+    "--cov",
+    "--cov-branch",
+    "--cov-report=term",
+    "--cov-report=html:reports/coverage_html",
+    "--cov-report=xml:reports/coverage.xml",
+]
+
+[tool.coverage.run]
+omit = ["**/__init__.py", "**/tests/**"]
+
+
+[build-system]
+requires = ["uv_build >= 0.10.0, <0.11.0"]
+build-backend = "uv_build"
