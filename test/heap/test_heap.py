@@ -1,5 +1,5 @@
 from heap.heap import Heap
-
+from ddmin import DDMin
 
 def test_heap() -> None:
     heap = Heap()
