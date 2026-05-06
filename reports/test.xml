@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.164" timestamp="2026-04-29T16:45:26.484505-04:00" hostname="Rens-MacBook-Pro-3.local"><testcase classname="test.heap.test_heap" name="test_heap" time="0.015"><failure message="assert 2345678 == 1678001&#10; +  where 2345678 = peek()&#10; +    where peek = &lt;heap.heap.Heap object at 0x10d544ad0&gt;.peek">def test_heap() -&gt; None:
+        heap = Heap()
+        heap.push(3_567_111)
+        heap.push(1_678_001)
+        heap.peek()
+        heap.push(2_345_678)
+        heap.push(2_345_678)
+        heap.pop()
+        heap.peek()
+        heap.push(2_345_678)
+        heap.push(1_678_001)
+        heap.pop()
+        heap.pop()
+&gt;       assert heap.peek() == 1_678_001
+E       assert 2345678 == 1678001
+E        +  where 2345678 = peek()
+E        +    where peek = &lt;heap.heap.Heap object at 0x10d544ad0&gt;.peek
+
+test/heap/test_heap.py:17: AssertionError</failure></testcase></testsuite></testsuites>
